@@ -13,8 +13,8 @@ public class WordRepetitionMapCreator {
                 if (word.equalsIgnoreCase(words[j])) {
                     counter++;
                 }
-                wordRepetitionMap.put(word.toLowerCase(), counter);
             }
+            wordRepetitionMap.put(word.toLowerCase(), counter);
         }
         return wordRepetitionMap;
     }
