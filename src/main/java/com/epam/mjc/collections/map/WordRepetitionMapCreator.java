@@ -8,13 +8,15 @@ public class WordRepetitionMapCreator {
         String[] words = sentence.split(" ");
         Map<String, Integer> wordRepetitionMap = new HashMap<>();
         for (String word : words) {
-            int counter = 0;
-            for (int j = 0; j < word.length(); j++) {
-                if (word.equalsIgnoreCase(words[j])) {
-                    counter++;
+            if(!wordRepetitionMap.containsKey(word.toLowerCase())) {
+                int counter = 0;
+                for (int j = 0; j < word.length(); j++) {
+                    if (word.equalsIgnoreCase(words[j])) {
+                        counter++;
+                    }
                 }
+                wordRepetitionMap.putIfAbsent(word.toLowerCase(), counter);
             }
-            wordRepetitionMap.put(word.toLowerCase(), counter);
         }
         return wordRepetitionMap;
     }
