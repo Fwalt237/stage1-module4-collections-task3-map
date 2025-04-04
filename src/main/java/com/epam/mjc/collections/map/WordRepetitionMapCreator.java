@@ -15,8 +15,8 @@ public class WordRepetitionMapCreator {
             if(!wordRepetitionMap.containsKey(cleanWord)) {
                 int counter = 0;
                 for (String s : words) {
-                    s.toLowerCase().replaceAll("[^a-z]", "");
-                    if (word.equalsIgnoreCase(s)) {
+                    s=s.toLowerCase().replaceAll("[^a-z]", "");
+                    if (cleanWord.equalsIgnoreCase(s)) {
                         counter++;
                     }
                 }
